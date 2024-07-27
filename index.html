@@ -14,6 +14,14 @@
 
     <title>Frontend Mentor | Product preview card component</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -28,54 +36,55 @@
         margin: 0;
         padding: 0;
         color: hsl(228, 12%, 48%);
+        font-family: 'Montserrat';
+        font-size: 11px;
+        border-radius: 5px;
         box-sizing: border-box;
-        background-color: Cream hsl(30, 38%, 92%);
-        border-radius: 10px;
-      }
-
-      html {
-        scroll-behavior: smooth;
       }
 
       body {
         min-height: 100vh;
-        padding: 50px 0;
+        padding: 0px 50px;
         display: grid;
         place-items: center;
+        background-color: hsl(30, 38%, 92%);
       }
 
       .container {
-        padding: 20px;
+        background-color: hsl(0, 0%, 100%);
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
-       
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
       }
 
-      .img {
+      .image {
         width: 100%;
         height: 100%;
       }
 
       .perfume-details {
-        padding: 8px;
+        padding: 20px;
       }
 
       .perfume-text {
         text-transform: uppercase;
-        font-size: 14px;
+        font-weight: 500;
         letter-spacing: 3px;
         padding: 10px;
       }
 
-      h2 {
+      h1 {
+        font-size: xx-large;
         color: black;
-        padding: 10px;
+        padding: 5px;
+        line-height: 1;
       }
 
       .write {
-        font-size: 14px;
+        font-weight: 500;
+        line-height: 2;
         padding: 10px;
       }
+
       .dollars {
         display: flex;
       }
@@ -83,45 +92,51 @@
       .amount {
         color: hsl(158, 36%, 37%);
         font-size: xx-large;
-        font-weight: bolder;
-        padding: 10px 20px;
+        font-weight: 700;
+        padding: 10px 10px;
+      }
+
+      h1, .amount {
+        font-family: 'Fraunces';
       }
 
       .badge {
-        font-size: 14px;
         text-decoration: line-through;
         align-self: center;
+        font-weight: 500;
       }
 
       .icon {
         background-color: hsl(158, 36%, 37%);
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 8px;
         display: flex;
         gap: 10px;
         justify-content: center;
         cursor: pointer;
-        transition: 0.5s;
+        transition: all 0.5s;
       }
 
       .icon:hover {
-        opacity: 0.5s;
-        background-color: red;
+        background-color: hsl(159, 81%, 17%);
       }
 
-      h4 {
+      .payment {
         color: hsl(0, 0%, 100%);
+        text-decoration: none;
+        font-weight: 700;
       }
     </style>
   </head>
   <body>
     <main class="container">
-      <img src="./images/image-product-mobile.jpg" class="img" alt="" />
-
+      <div>
+        <img src="./images/image-product-mobile.jpg" class="image" alt="" />
+      </div>
       <div class="perfume-details">
         <div class="perfume-text">Perfume</div>
 
-        <h2>Gabrielle Essence Eau De Parfum</h2>
+        <h1>Gabrielle Essence Eau De Parfum</h1>
 
         <p class="write">
           A floral, solar and voluptuous interpretation composed by Olivier
@@ -135,7 +150,8 @@
 
         <div class="icon">
           <img src="/images/icon-cart.svg" alt="" />
-          <h4>Add to Cart</h4>
+          <a href="https://play.google.com/store/paymentmethods" 
+             class="payment" target="_blank">Add to Cart</a>
         </div>
       </div>
     </main>
